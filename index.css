@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.video p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.video-name {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* CSS para a mensagem "Nenhum produto encontrado" */
+#noResultMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Certifica-se de que a mensagem esteja acima de outros conteúdos */
+    background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    text-align: center;
+    font-size: 18px;
+}
+
+#logo {
+    width: 300px; /* Ajuste o tamanho conforme necessário */
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+header {
+    width: 100px;
+}
+
+.search-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+}
+
+#searchInput:focus {
+    border-color: #3b5ca5; /* Cor da borda ao focar, mesma cor do botão */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+#searchButton {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3b5ca5; /* Cor de fundo do botão */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    background: #fff;
+}
+
+.container h1 {
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.container .video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container .video-container .video {
+    position: relative; /* Adicionando posição relativa para posicionar a descrição */
+    height: 400px;
+    width: 300px;
+    padding-bottom: 60px;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.container .video-container .video p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 34, 128, 0.7); /* Fundo semi-transparente */
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.container .video-container .video video {
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; Removendo esta linha */
+    transition: .2s linear;
+}
+
+.container .video-container .video:hover video {
+    transform: scale(1.1);
+}
+
+.container .popup-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .8);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.container .popup-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Reduzindo o tamanho do vídeo para 100% */
+    height: 100vh;
+    max-width: 90%; /* Adicionando uma largura máxima para manter a proporção em dispositivos menores */
+    border-radius: 5px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.container .popup-video span {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container .popup-video video {
+        width: 95%;
+    }
+}
