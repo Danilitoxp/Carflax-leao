@@ -6,7 +6,6 @@ document.querySelectorAll('.video-container video').forEach(vid => {
         console.log('Nome do vídeo:', videoName);
         document.querySelector('.popup-video').style.display = 'block';
         document.querySelector('.popup-video video').src = vid.src;
-        document.querySelector('.popup-video p').innerText = videoName; // Define o nome do vídeo no pop-up
     }
 });
 
